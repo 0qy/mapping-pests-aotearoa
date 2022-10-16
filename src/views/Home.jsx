@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import Heading from "../components/Heading";
 import MapDrawer from "./MapDrawer";
 import PestScene from "./PestScene";
 
@@ -8,6 +10,7 @@ const Home = () => {
 
   return (
     <>
+      <Heading />
       <MapDrawer
         currentPest={currentPest}
         drawerOpen={drawerOpen}
