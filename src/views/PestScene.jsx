@@ -1,15 +1,13 @@
-import React from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
-import { Stars, OrbitControls } from '@react-three/drei'
-import { Sky } from '@react-three/drei'
-import { useGLTF } from '@react-three/drei'
-import { Suspense } from 'react'
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { Stars, OrbitControls } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 
-import Deer from '../components/Deer'
-import Stoat from '../components/Stoat'
-import Island from '../components/Island'
+import Deer from "../components/Deer";
+import Stoat from "../components/Stoat";
+import Island from "../components/Island";
 
-const PestScene = () => {
+const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
   return (
     <Canvas camera={{ fov: 85, near: 0.4, far: 1000, position: [0, 8, 5] }}>
       <Sky
@@ -34,9 +32,13 @@ const PestScene = () => {
       />
 
       <Island />
-      <Deer />
+      <Deer
+        currentPest={currentPest}
+        setCurrentPest={setCurrentPest}
+        setDrawerOpen={setDrawerOpen}
+      />
     </Canvas>
-  )
-}
+  );
+};
 
-export default PestScene
+export default PestScene;
