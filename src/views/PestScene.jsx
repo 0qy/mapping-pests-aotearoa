@@ -6,6 +6,7 @@ import { Sky } from "@react-three/drei";
 import Deer from "../components/Deer";
 import Stoat from "../components/Stoat";
 import Island from "../components/Island";
+import Goat from "../components/Goat";
 
 const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
   return (
@@ -33,6 +34,11 @@ const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
 
       <Island />
       <Deer
+        currentPest={currentPest}
+        setCurrentPest={setCurrentPest}
+        setDrawerOpen={setDrawerOpen}
+      />
+      <Goat
         currentPest={currentPest}
         setCurrentPest={setCurrentPest}
         setDrawerOpen={setDrawerOpen}
