@@ -30,7 +30,7 @@ const Deer = (props) => {
         }}
         object={deerObj}
         scale={0.3}
-        position={[0, 2.3, 0]}
+        position={[0, 3.7, 0]}
         rotation={[0, Math.PI / -2, 0]}
       />
     </>
