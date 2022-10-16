@@ -1,25 +1,37 @@
-import React from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Stars, OrbitControls } from '@react-three/drei'
-import { Sky } from '@react-three/drei'
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { Stars, OrbitControls } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
+import { PerspectiveCamera } from "three";
 
-
-import Deer from "../components/Deer";
-import Stoat from "../components/Stoat";
-import Island from "../components/Island";
-import Goat from "../components/Goat";
-
+import Animals from "../components/Animals";
 
 const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
+  const CameraHelper = () => {
+    const camera = new PerspectiveCamera(60, 1, 1, 15);
+    return (
+      <group position={[0, 4, 9]}>
+        <cameraHelper args={[camera]} />;
+      </group>
+    );
+  };
+
   return (
-    <Canvas camera={{ fov: 85, near: 0.4, far: 1000, position: [0, 8, 5] }}>
+    <Canvas
+      camera={{
+        fov: 40,
+        near: 0.1,
+        far: 1000,
+        position: [0, 4, 9],
+      }}
+    >
+      <OrbitControls />
       <Sky
         distance={450000}
         sunPosition={[5, 1, 8]}
         inclination={0}
         azimuth={0.25}
       />
-      <OrbitControls />
 
       <ambientLight intensity={0.2} />
       <directionalLight color="orange" position={[0, 0, 6]} />
@@ -33,24 +45,14 @@ const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
         fade
         speed={1} // Faded dots (default=false)
       />
-
-      <Island />
-      <Deer
+      <Animals
         currentPest={currentPest}
         setCurrentPest={setCurrentPest}
         setDrawerOpen={setDrawerOpen}
       />
-
-      <Stoat />
-
-      <Goat
-        currentPest={currentPest}
-        setCurrentPest={setCurrentPest}
-        setDrawerOpen={setDrawerOpen}
-      />
-
+      {/* <CameraHelper /> */}
     </Canvas>
-  )
-}
+  );
+};
 
-export default PestScene
+export default PestScene;
