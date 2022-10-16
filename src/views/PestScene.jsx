@@ -1,11 +1,11 @@
-import React from "react";
-import { Canvas } from "@react-three/fiber";
-import { Stars, OrbitControls } from "@react-three/drei";
-import { Sky } from "@react-three/drei";
+import React from 'react'
+import { Canvas } from '@react-three/fiber'
+import { Stars, OrbitControls } from '@react-three/drei'
+import { Sky } from '@react-three/drei'
 
-import Deer from "../components/Deer";
-import Stoat from "../components/Stoat";
-import Island from "../components/Island";
+import Deer from '../components/Deer'
+import Stoat from '../components/Stoat'
+import Island from '../components/Island'
 
 const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
   return (
@@ -37,8 +37,9 @@ const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
         setCurrentPest={setCurrentPest}
         setDrawerOpen={setDrawerOpen}
       />
+      <Stoat />
     </Canvas>
-  );
-};
+  )
+}
 
-export default PestScene;
+export default PestScene
