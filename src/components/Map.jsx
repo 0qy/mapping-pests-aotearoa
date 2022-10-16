@@ -12,7 +12,7 @@ import { dataMap } from "../data/dataMap";
 const INITIAL_VIEW_STATE = {
   latitude: -40.946,
   longitude: 174.167,
-  zoom: 4,
+  zoom: 7,
   bearing: 0,
   pitch: 30,
 };
