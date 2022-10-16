@@ -1,17 +1,14 @@
 import React from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import { Stars, OrbitControls } from '@react-three/drei'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
-import { useLoader } from '@react-three/fiber'
 import { Sky } from '@react-three/drei'
 
 import Deer from '../components/Deer'
+import Island from '../components/Island'
 
 const PestScene = () => {
-  const mountainObj = useLoader(OBJLoader, '/models/mountain.obj')
-
   return (
-    <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 6, 5] }}>
+    <Canvas camera={{ fov: 85, near: 0.4, far: 1000, position: [0, 8, 5] }}>
       <Sky
         distance={450000}
         sunPosition={[5, 1, 8]}
@@ -21,7 +18,7 @@ const PestScene = () => {
       <OrbitControls />
 
       <ambientLight intensity={0.2} />
-      <directionalLight color="orange" position={[0, 0, 5]} />
+      <directionalLight color="orange" position={[0, 0, 6]} />
 
       <Stars
         radius={100} // Radius of the inner sphere (default=100)
@@ -33,7 +30,7 @@ const PestScene = () => {
         speed={1} // Faded dots (default=false)
       />
 
-      <primitive object={mountainObj} scale={1} />
+      <Island />
       <Deer />
     </Canvas>
   )
