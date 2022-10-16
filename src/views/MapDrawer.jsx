@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { styled } from "@mui/system";
 import { Button, Drawer, Box } from "@mui/material";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+
+import Map from "../components/Map";
 
 const FullPageContainer = styled(Box)({
   position: "absolute",
@@ -22,6 +25,10 @@ const MapDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const handleDrawerClose = () => {
+    setDrawerOpen(false);
+  };
+
   return (
     <FullPageContainer>
       <Button onClick={handleDrawerOpen}>left</Button>
@@ -37,8 +44,29 @@ const MapDrawer = () => {
           },
         }}
       >
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            top: "50%",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Button
+            sx={{
+              zIndex: 10000000,
+              position: "relative",
+              right: "1px",
+              top: "50%",
+            }}
+            onClick={handleDrawerClose}
+          >
+            <ChevronLeftIcon />
+          </Button>
+        </Box>
         <MapContainer>
-          <p>drawer content</p>
+          <Map />
         </MapContainer>
       </Drawer>
     </FullPageContainer>
