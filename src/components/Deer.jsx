@@ -15,7 +15,7 @@ const Deer = (props) => {
   });
 
   const handleClick = () => {
-    setCurrentPest("deer");
+    setCurrentPest("himalayanTahr");
     setDrawerOpen(true);
   };
   return (

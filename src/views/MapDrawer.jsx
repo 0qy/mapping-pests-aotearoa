@@ -4,6 +4,7 @@ import { Button, Drawer, Box, Typography } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 import Map from "../components/Map";
+import { getPestName } from "../data/dataMap";
 
 const FullPageContainer = styled(Box)({
   position: "absolute",
@@ -42,11 +43,14 @@ const MapDrawer = (props) => {
         <Box
           sx={{
             zIndex: 10000000,
-            paddingTop: "30px",
-            paddingLeft: "50px",
+            position: "relative",
+            paddingLeft: "20px",
+            top: "95%",
           }}
         >
-          <Typography>The distribution of {currentPest} in Aotearoa</Typography>
+          <Typography>
+            The distribution of {getPestName(currentPest)} in Aotearoa
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -70,7 +74,7 @@ const MapDrawer = (props) => {
           </Button>
         </Box>
         <MapContainer>
-          <Map />
+          <Map currentPest={currentPest} />
         </MapContainer>
       </Drawer>
     </FullPageContainer>
