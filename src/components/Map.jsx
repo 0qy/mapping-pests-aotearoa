@@ -26,15 +26,6 @@ const NAV_CONTROL_STYLE = {
   left: 10,
 };
 
-const landCover = [
-  [
-    [-32.824211, 163.755384],
-    [-31.858897, 182.834421],
-    [-48.618385, 184.593381],
-    [-48.092757, 160.583575],
-  ],
-];
-
 function Map({ currentPest }) {
   const ambientLight = new AmbientLight({
     color: [255, 255, 255],
