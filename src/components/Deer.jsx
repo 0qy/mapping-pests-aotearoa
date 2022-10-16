@@ -1,28 +1,32 @@
-import React from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
-import { Stars, OrbitControls } from '@react-three/drei'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
-import { useLoader } from '@react-three/fiber'
-import { Sky } from '@react-three/drei'
-import { useState } from 'react'
-import { useFrame } from '@react-three/fiber'
+import React from "react";
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { useLoader } from "@react-three/fiber";
+import { useState } from "react";
+import { useFrame } from "@react-three/fiber";
 
-const Deer = () => {
-  const deerObj = useLoader(OBJLoader, '/models/deer.obj')
-  const [hover, setHover] = useState(false)
+const Deer = (props) => {
+  const { setCurrentPest, setDrawerOpen } = props;
+  const deerObj = useLoader(OBJLoader, "/models/deer.obj");
+  const [hover, setHover] = useState(false);
   useFrame(() => {
     if (hover) {
-      deerObj.rotation.y += 0.02
+      deerObj.rotation.y += 0.02;
     }
-  })
+  });
+
+  const handleClick = () => {
+    setCurrentPest("deer");
+    setDrawerOpen(true);
+  };
   return (
     <>
       <primitive
+        onClick={handleClick}
         onPointerOver={() => {
-          setHover(true)
+          setHover(true);
         }}
         onPointerOut={() => {
-          setHover(false)
+          setHover(false);
         }}
         object={deerObj}
         scale={0.3}
@@ -30,7 +34,7 @@ const Deer = () => {
         rotation={[0, Math.PI / -2, 0]}
       />
     </>
-  )
-}
+  );
+};
 
-export default Deer
+export default Deer;

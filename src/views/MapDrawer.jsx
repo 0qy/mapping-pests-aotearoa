@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { styled } from "@mui/system";
-import { Button, Drawer, Box } from "@mui/material";
+import { Button, Drawer, Box, Typography } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 import Map from "../components/Map";
@@ -9,7 +9,7 @@ const FullPageContainer = styled(Box)({
   position: "absolute",
   top: 0,
   left: 0,
-  color: "white",
+  color: "blue",
   zIndex: 1000000,
 });
 
@@ -18,12 +18,8 @@ const MapContainer = styled(Box)({
   heigth: "100vh",
 });
 
-const MapDrawer = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const handleDrawerOpen = () => {
-    setDrawerOpen(!drawerOpen);
-  };
+const MapDrawer = (props) => {
+  const { currentPest, drawerOpen, setDrawerOpen } = props;
 
   const handleDrawerClose = () => {
     setDrawerOpen(false);
@@ -31,7 +27,6 @@ const MapDrawer = () => {
 
   return (
     <FullPageContainer>
-      <Button onClick={handleDrawerOpen}>left</Button>
       <Drawer
         anchor={"left"}
         variant="temporary"
@@ -44,6 +39,15 @@ const MapDrawer = () => {
           },
         }}
       >
+        <Box
+          sx={{
+            zIndex: 10000000,
+            paddingTop: "30px",
+            paddingLeft: "50px",
+          }}
+        >
+          <Typography>The distribution of {currentPest} in Aotearoa</Typography>
+        </Box>
         <Box
           sx={{
             position: "relative",
