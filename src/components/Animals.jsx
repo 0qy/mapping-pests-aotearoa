@@ -4,7 +4,7 @@ import Island from "./Island";
 import Stoat from "../components/Stoat";
 import Goat from "../components/Goat";
 
-const Animals = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
+const Animals = ({ currentPest, setCurrentPest, setShowCard }) => {
   return (
     <>
       <group>
@@ -12,12 +12,12 @@ const Animals = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
         <Stoat
           currentPest={currentPest}
           setCurrentPest={setCurrentPest}
-          setDrawerOpen={setDrawerOpen}
+          setShowCard={setShowCard}
         />
         <Goat
           currentPest={currentPest}
           setCurrentPest={setCurrentPest}
-          setDrawerOpen={setDrawerOpen}
+          setShowCard={setShowCard}
         />
       </group>
     </>

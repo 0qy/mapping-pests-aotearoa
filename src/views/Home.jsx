@@ -8,11 +8,14 @@ import PestScene from "./PestScene";
 const Home = () => {
   const [currentPest, setCurrentPest] = useState("");
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [showCard, setShowCard] = useState(false);
 
   return (
     <>
       <Heading />
-      <InfoCard setDrawerOpen={setDrawerOpen} />
+      {showCard && (
+        <InfoCard setDrawerOpen={setDrawerOpen} setShowCard={setShowCard} />
+      )}
       <MapDrawer
         currentPest={currentPest}
         drawerOpen={drawerOpen}
@@ -21,7 +24,7 @@ const Home = () => {
       <PestScene
         currentPest={currentPest}
         setCurrentPest={setCurrentPest}
-        setDrawerOpen={setDrawerOpen}
+        setShowCard={setShowCard}
       />
     </>
   );

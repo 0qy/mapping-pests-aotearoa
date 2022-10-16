@@ -6,7 +6,7 @@ import { PerspectiveCamera } from "three";
 
 import Animals from "../components/Animals";
 
-const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
+const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
   const CameraHelper = () => {
     const camera = new PerspectiveCamera(60, 1, 1, 15);
     return (
@@ -48,7 +48,7 @@ const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
       <Animals
         currentPest={currentPest}
         setCurrentPest={setCurrentPest}
-        setDrawerOpen={setDrawerOpen}
+        setShowCard={setShowCard}
       />
       {/* <CameraHelper /> */}
     </Canvas>

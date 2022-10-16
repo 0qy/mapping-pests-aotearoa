@@ -6,7 +6,7 @@ import { useFrame } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 
 const Goat = (props) => {
-  const { setCurrentPest, setDrawerOpen } = props;
+  const { setCurrentPest, setShowCard } = props;
   const obj = useLoader(OBJLoader, "/models/goat.obj");
   const [hover, setHover] = useState(false);
   useFrame(() => {
@@ -29,7 +29,7 @@ const Goat = (props) => {
 
   const handleClick = () => {
     setCurrentPest("feralGoat");
-    setDrawerOpen(true);
+    setShowCard(true);
   };
   return (
     <>

@@ -4,7 +4,6 @@ import {
   CardContent,
   styled,
   Typography,
-  Box,
   CardActions,
   Button,
   CardHeader,
@@ -14,18 +13,22 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const StyledCard = styled(Card)({
   position: "absolute",
-  top: "110px",
+  top: "80px",
   right: "30px",
-  width: "35vw",
-  height: "50vh",
+  width: "25vw",
+  height: "80vh",
   zIndex: 1000,
-  backgroundColor: "rgba(0,0,0,0.4)",
+  backgroundColor: "rgba(0,0,0,0.25)",
   color: "white",
 });
 
-const InfoCard = ({ setDrawerOpen }) => {
+const InfoCard = ({ setDrawerOpen, setShowCard }) => {
   const handleClick = () => {
     setDrawerOpen(true);
+  };
+
+  const handleClose = () => {
+    setShowCard(false);
   };
 
   return (
@@ -33,7 +36,7 @@ const InfoCard = ({ setDrawerOpen }) => {
       <StyledCard>
         <CardHeader
           action={
-            <IconButton aria-label="settings">
+            <IconButton aria-label="settings" onClick={handleClose}>
               <CloseIcon />
             </IconButton>
           }
