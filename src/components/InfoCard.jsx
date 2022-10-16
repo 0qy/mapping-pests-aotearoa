@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
+import { infoCardData } from "../data/infoCardData";
+
 const StyledCard = styled(Card)({
   position: "absolute",
   top: "80px",
@@ -22,7 +24,7 @@ const StyledCard = styled(Card)({
   color: "white",
 });
 
-const InfoCard = ({ setDrawerOpen, setShowCard }) => {
+const InfoCard = ({ setDrawerOpen, setShowCard, currentPest }) => {
   const handleClick = () => {
     setDrawerOpen(true);
   };
@@ -30,6 +32,8 @@ const InfoCard = ({ setDrawerOpen, setShowCard }) => {
   const handleClose = () => {
     setShowCard(false);
   };
+
+  const info = infoCardData.find((infoItem) => infoItem.id === currentPest);
 
   return (
     <>
@@ -40,23 +44,13 @@ const InfoCard = ({ setDrawerOpen, setShowCard }) => {
               <CloseIcon />
             </IconButton>
           }
-          title="Feral Goats"
+          title={info.name}
         />
         <CardContent>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            Feral goats can quickly destroy all vegetation within their reach,
-            threatening native plants and damaging the forest understorey.
+            {info.subHeading}
           </Typography>
-          <Typography variant="body2">
-            Goats were introduced to New Zealand in the early days of European
-            settlement for food, to establish a commercial fibre industry, and
-            for weed control on developing land. The descendents of those that
-            escaped or were deliberately released thrived in the country’s grass
-            hills, forest and scrubland areas. Today feral goats (Capra hircus)
-            occur on both main islands and a few offshore islands. Feral goats
-            are classifed as wild animals under the Wild Animal Control Act
-            1977.
-          </Typography>
+          <Typography variant="body2">{info.description}</Typography>
         </CardContent>
         <CardActions>
           <Button size="small" onClick={handleClick}>

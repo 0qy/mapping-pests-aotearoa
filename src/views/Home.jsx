@@ -14,7 +14,11 @@ const Home = () => {
     <>
       <Heading />
       {showCard && (
-        <InfoCard setDrawerOpen={setDrawerOpen} setShowCard={setShowCard} />
+        <InfoCard
+          setDrawerOpen={setDrawerOpen}
+          setShowCard={setShowCard}
+          currentPest={currentPest}
+        />
       )}
       <MapDrawer
         currentPest={currentPest}
