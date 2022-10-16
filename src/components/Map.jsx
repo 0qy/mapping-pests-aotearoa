@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { StaticMap, MapContext, NavigationControl } from "react-map-gl";
-import DeckGL, { GeoJsonLayer, ArcLayer } from "deck.gl";
-// source: Natural Earth http://www.naturalearthdata.com/ via geojson.xyz
-const AIR_PORTS =
-  "https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson";
+import DeckGL, { PolygonLayer, GeoJsonLayer } from "deck.gl";
+import {
+  LightingEffect,
+  AmbientLight,
+  _SunLight as SunLight,
+} from "@deck.gl/core";
+
+import { dataMap } from "../data/dataMap";
 
 const INITIAL_VIEW_STATE = {
   latitude: -40.946,
@@ -21,7 +25,34 @@ const NAV_CONTROL_STYLE = {
   left: 10,
 };
 
-function Map() {
+const landCover = [
+  [
+    [-32.824211, 163.755384],
+    [-31.858897, 182.834421],
+    [-48.618385, 184.593381],
+    [-48.092757, 160.583575],
+  ],
+];
+
+function Map({ currentPest }) {
+  const ambientLight = new AmbientLight({
+    color: [255, 255, 255],
+    intensity: 1.0,
+  });
+
+  const dirLight = new SunLight({
+    timestamp: Date.UTC(2019, 7, 1, 22),
+    color: [255, 255, 255],
+    intensity: 1.0,
+    _shadow: true,
+  });
+
+  const [effects] = useState(() => {
+    const lightingEffect = new LightingEffect({ ambientLight, dirLight });
+    lightingEffect.shadowColor = [0, 0, 0, 0.5];
+    return [lightingEffect];
+  });
+
   const onClick = (info) => {
     if (info.object) {
       // eslint-disable-next-line
@@ -32,36 +63,55 @@ function Map() {
   };
 
   const layers = [
-    new GeoJsonLayer({
-      id: "airports",
-      data: AIR_PORTS,
-      // Styles
-      filled: true,
-      pointRadiusMinPixels: 2,
-      pointRadiusScale: 2000,
-      getPointRadius: (f) => 11 - f.properties.scalerank,
-      getFillColor: [200, 0, 80, 180],
-      // Interactive props
-      pickable: true,
-      autoHighlight: true,
-      onClick,
+    // only needed when using shadows - a plane for shadows to drop on
+    new PolygonLayer({
+      id: "ground",
+      data: landCover,
+      stroked: false,
+      getPolygon: (f) => f,
+      getFillColor: [0, 0, 0, 0],
     }),
-    new ArcLayer({
-      id: "arcs",
-      data: AIR_PORTS,
-      dataTransform: (d) =>
-        d.features.filter((f) => f.properties.scalerank < 4),
-      // Styles
-      getSourcePosition: (f) => [-0.4531566, 51.4709959], // London
-      getTargetPosition: (f) => f.geometry.coordinates,
-      getSourceColor: [0, 128, 200],
-      getTargetColor: [200, 0, 80],
-      getWidth: 1,
+    new GeoJsonLayer({
+      id: "geojson",
+      data: dataMap(currentPest),
+      opacity: 0.8,
+      stroked: false,
+      filled: true,
+      extruded: true,
+      wireframe: true,
+      getElevation: (f) => {
+        if (f.properties["Abundance"] === "H") {
+          return 5000;
+        }
+
+        if (f.properties["Abundance"] === "M") {
+          return 2500;
+        }
+        if (f.properties["Abundance"] === "L") {
+          return 5;
+        }
+      },
+      getFillColor: (f) => getColor(f.properties["Abundance"]),
+      getLineColor: (f) => getColor(f.properties["Abundance"]),
+      pickable: true,
     }),
   ];
 
+  const getColor = (abundance) => {
+    if (abundance === "H") {
+      return [255, 0, 4];
+    }
+    if (abundance === "M") {
+      return [255, 132, 0];
+    }
+    if (abundance === "L") {
+      return [122, 255, 0];
+    }
+  };
+
   return (
     <DeckGL
+      effects={effects}
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       layers={layers}

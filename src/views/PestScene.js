@@ -1,14 +1,14 @@
-import React from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
-import { Stars, OrbitControls } from '@react-three/drei'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
-import { useLoader } from '@react-three/fiber'
-import { Sky } from '@react-three/drei'
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { Stars, OrbitControls } from "@react-three/drei";
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { useLoader } from "@react-three/fiber";
+import { Sky } from "@react-three/drei";
 
-import Deer from '../components/Deer'
+import Deer from "../components/Deer";
 
-const PestScene = () => {
-  const mountainObj = useLoader(OBJLoader, '/models/mountain.obj')
+const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
+  const mountainObj = useLoader(OBJLoader, "/models/mountain.obj");
 
   return (
     <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 6, 5] }}>
@@ -34,9 +34,13 @@ const PestScene = () => {
       />
 
       <primitive object={mountainObj} scale={1} />
-      <Deer />
+      <Deer
+        currentPest={currentPest}
+        setCurrentPest={setCurrentPest}
+        setDrawerOpen={setDrawerOpen}
+      />
     </Canvas>
-  )
-}
+  );
+};
 
-export default PestScene
+export default PestScene;
