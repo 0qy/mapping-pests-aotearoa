@@ -3,9 +3,12 @@ import { Canvas } from '@react-three/fiber'
 import { Stars, OrbitControls } from '@react-three/drei'
 import { Sky } from '@react-three/drei'
 
-import Deer from '../components/Deer'
-import Stoat from '../components/Stoat'
-import Island from '../components/Island'
+
+import Deer from "../components/Deer";
+import Stoat from "../components/Stoat";
+import Island from "../components/Island";
+import Goat from "../components/Goat";
+
 
 const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
   return (
@@ -37,7 +40,15 @@ const PestScene = ({ currentPest, setCurrentPest, setDrawerOpen }) => {
         setCurrentPest={setCurrentPest}
         setDrawerOpen={setDrawerOpen}
       />
+
       <Stoat />
+
+      <Goat
+        currentPest={currentPest}
+        setCurrentPest={setCurrentPest}
+        setDrawerOpen={setDrawerOpen}
+      />
+
     </Canvas>
   )
 }
