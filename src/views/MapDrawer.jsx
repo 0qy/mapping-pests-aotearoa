@@ -6,8 +6,6 @@ const FullPageContainer = styled(Box)({
   position: "absolute",
   top: 0,
   left: 0,
-  height: "100vh",
-  width: "100vw",
   color: "white",
   zIndex: 1000000,
 });
@@ -32,6 +30,7 @@ const MapDrawer = () => {
         variant="temporary"
         open={drawerOpen}
         hideBackdrop={true}
+        transitionDuration={800}
         PaperProps={{
           sx: {
             backgroundColor: "rgba(255, 255, 255, 0.6)",
