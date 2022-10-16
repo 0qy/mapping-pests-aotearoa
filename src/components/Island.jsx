@@ -28,7 +28,7 @@ const Island = () => {
       <mesh
         geometry={geometry}
         scale={0.8}
-        position={[0, -3, 0]}
+        position={[0, -5, 0]}
         rotation={[0, 0, 0]}
       >
         <meshPhysicalMaterial

@@ -1,5 +1,5 @@
-import React from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { useEffect } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
 import { Sky } from "@react-three/drei";
 import { PerspectiveCamera } from "three";
@@ -19,13 +19,13 @@ const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
   return (
     <Canvas
       camera={{
-        fov: 40,
+        fov: 32,
         near: 0.1,
         far: 1000,
-        position: [0, 4, 9],
+        position: [0, 4, 0],
       }}
     >
-      <OrbitControls />
+      <OrbitControls target={[0, 0, 0]} />
       <Sky
         distance={450000}
         sunPosition={[5, 1, 8]}

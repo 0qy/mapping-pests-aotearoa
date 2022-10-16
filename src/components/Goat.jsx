@@ -36,8 +36,8 @@ const Goat = (props) => {
       <mesh
         geometry={geometry}
         scale={0.06}
-        position={[-3, 0.5, 0]}
-        rotation={[Math.PI / -2, 0, 0]}
+        position={[-2, -1.5, 1.5]}
+        rotation={[Math.PI / -2, 0, Math.PI / 4]}
         onClick={handleClick}
         onPointerOver={() => {
           setHover(true);

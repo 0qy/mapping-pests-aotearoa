@@ -34,7 +34,7 @@ const Stoat = (props) => {
         onClick={handleClick}
         geometry={geometry}
         scale={0.5}
-        position={[2, 0.65, 1.5]}
+        position={[2, -1.36, 1.5]}
         rotation={[0, Math.PI / -2, 0]}
       >
         <meshPhysicalMaterial map={colorMap} normalMap={normalMap} />
