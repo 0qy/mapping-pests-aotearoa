@@ -1,6 +1,6 @@
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ObjViewer from "./views/ObjViewer";
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import PestScene from './views/PestScene'
 
 function App() {
   return (
@@ -8,12 +8,12 @@ function App() {
       <div className="App">
         <div id="canvas-container">
           <Routes>
-            <Route path="/" element={<ObjViewer />} />
+            <Route path="/" element={<PestScene />} />
           </Routes>
         </div>
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
