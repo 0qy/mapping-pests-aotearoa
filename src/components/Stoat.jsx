@@ -4,7 +4,7 @@ import { useLoader } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 
 const Stoat = (props) => {
-  const { setCurrentPest, setDrawerOpen } = props;
+  const { setCurrentPest, setShowCard } = props;
   const stoatObj = useLoader(OBJLoader, "/models/stoat.obj");
 
   const [colorMap, normalMap] = useTexture([
@@ -25,7 +25,7 @@ const Stoat = (props) => {
 
   const handleClick = () => {
     setCurrentPest("stoat");
-    setDrawerOpen(true);
+    setShowCard(true);
   };
 
   return (

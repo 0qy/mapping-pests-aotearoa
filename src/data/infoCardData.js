@@ -24,8 +24,8 @@ export const infoCardData = [
       "Possums have a significant impact on many of New Zealand’s natural ecosystems. They occur in high numbers and their own predators, such as feral cats, do not have much effect on controlling possum population size. Leaves are the main part of their diet, but possums are opportunistic omnivores. They eat buds, flowers, fruit/berries and nectar, which means they compete with native birds and reptiles for food sources. The growth and life-cycle of a tree or plant is significantly affected when all parts of it are eaten. Possums also have ‘favourites’ such as rātā or kamahi trees, leading to an even greater impact on these species. In 1993, possums were filmed eating the eggs and chicks of kōkako and this evidence changed many people’s views of their threat to wildlife. They eat invertebrates, including weta, and are significant predators of New Zealand land snails such as Powelliphanta. They often occupy holes in tree trunks for their nests which would otherwise be used by nesting birds such as kākāriki and saddlebacks. ",
   },
   {
-    id: "deer",
-    name: "deer",
+    id: "redDeer",
+    name: "red deer",
     subHeading:
       "In New Zealand, deer have no natural predators. This means they can grow to large numbers without the support of hunters and others to aid in their management.",
     description:

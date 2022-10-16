@@ -6,6 +6,10 @@ export const dataMap = (pestName) => {
       return "https://0qy.github.io/data/feralGoat2014.json";
     case "stoat":
       return "https://0qy.github.io/data/stoat2014.json";
+    case "redDeer":
+      return "https://0qy.github.io/data/redDeer2014.json";
+    case "possom":
+      return "https://0qy.github.io/data/possom2014.json";
     default:
       return null;
   }
