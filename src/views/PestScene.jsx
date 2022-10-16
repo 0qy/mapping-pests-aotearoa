@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import React from "react";
+import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
 import { Sky } from "@react-three/drei";
 import { PerspectiveCamera } from "three";
