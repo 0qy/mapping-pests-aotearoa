@@ -1,15 +1,35 @@
 export const dataMap = (pestName) => {
   switch (pestName) {
     case "himalayanTahr":
-      return "https://0qy.github.io/data/himalayanTahr2014.json";
+      return {
+        url: "https://0qy.github.io/data/himalayanTahr",
+        split: 1,
+      };
     case "feralGoat":
-      return "https://0qy.github.io/data/feralGoat2014.json";
-    case "stoat":
-      return "https://0qy.github.io/data/stoat2014.json";
+      return {
+        url: "https://0qy.github.io/data/feralGoat",
+        split: 1,
+      };
     case "redDeer":
-      return "https://0qy.github.io/data/redDeer2014.json";
+      return {
+        url: "https://0qy.github.io/data/redDeer",
+        split: 1,
+      };
+    case "stoat":
+      return {
+        url: "https://0qy.github.io/data/stoat",
+        split: 36,
+      };
     case "possom":
-      return "https://0qy.github.io/data/possom2014.json";
+      return {
+        url: "https://0qy.github.io/data/possom",
+        split: 16,
+      };
+    case "rabbit":
+      return {
+        url: "https://0qy.github.io/data/rabbit",
+        split: 36,
+      };
     default:
       return null;
   }
