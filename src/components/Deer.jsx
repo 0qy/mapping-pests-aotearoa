@@ -16,14 +16,6 @@ const Deer = () => {
     }
   })
   return (
-    // <mesh
-    //   onPointerOver={() => {
-    //     setHover(true)
-    //   }}
-    //   onPointerOut={() => {
-    //     setHover(false)
-    //   }}
-    // >
     <>
       <primitive
         onPointerOver={() => {
@@ -38,7 +30,6 @@ const Deer = () => {
         rotation={[0, Math.PI / -2, 0]}
       />
     </>
-    // </mesh>
   )
 }
 
