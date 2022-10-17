@@ -31,4 +31,10 @@ export const infoCardData = [
     description:
       "Deer populations have been building over the past couple of decades across the country. This is because they have been harvesting at a lower level than their breeding rate. As numbers have increased, deer have moved into new areas to search for food. Deer damage native forests by feeding on forest plants, trees, and seedlings. They start with the native plants they prefer most such as schefflera, broadleaf, and hen and chicken fern in forest understoreys. Then they will move on to plants they like less. This can result in large groups of deer mainly eating falling leaves from canopy trees. In subalpine areas, deer can damage tall tussocks and wildflowers like alpine buttercups. By targeting these plants and altering the forest structure, deer can change their composition of plants. This takes vital food and shelter from other animals. Over time this can hinder or stop forest regeneration.",
   },
+  {
+    id: "himalayanTahr",
+    name: "himalayan tahr",
+    subHeading: "",
+    description: "",
+  },
 ];
