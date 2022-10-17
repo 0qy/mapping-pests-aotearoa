@@ -4,6 +4,7 @@ import { Stars, OrbitControls } from "@react-three/drei";
 import { Sky } from "@react-three/drei";
 import { PerspectiveCamera } from "three";
 
+import Fog from "../components/Fog";
 import Animals from "../components/Animals";
 
 const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
@@ -50,6 +51,7 @@ const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
         setCurrentPest={setCurrentPest}
         setShowCard={setShowCard}
       />
+      <Fog />
       {/* <CameraHelper /> */}
     </Canvas>
   );
