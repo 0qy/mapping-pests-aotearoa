@@ -1,31 +1,31 @@
-import React, { useMemo } from 'react'
+import React, { useMemo } from "react";
 
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
-import { useLoader } from '@react-three/fiber'
-import { useTexture } from '@react-three/drei'
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { useLoader } from "@react-three/fiber";
+import { useTexture } from "@react-three/drei";
 
 const Rabbit = (props) => {
-  const { setCurrentPest, setShowCard } = props
+  const { setCurrentPest, setShowCard } = props;
 
-  const rabbitObj = useLoader(OBJLoader, '/models/rabbit.obj')
+  const rabbitObj = useLoader(OBJLoader, "/models/rabbit.obj");
 
-  const colorMap = useTexture('/texture/rabbitTex.jpeg')
+  const colorMap = useTexture("/texture/rabbitTex.jpeg");
 
   const geometry = useMemo(() => {
-    let g
+    let g;
     rabbitObj.traverse((c) => {
-      if (c.type === 'Mesh') {
-        const _c = c
-        g = _c.geometry
+      if (c.type === "Mesh") {
+        const _c = c;
+        g = _c.geometry;
       }
-    })
-    return g
-  }, [rabbitObj])
+    });
+    return g;
+  }, [rabbitObj]);
 
   const handleClick = () => {
-    setCurrentPest('rabit')
-    setShowCard(true)
-  }
+    setCurrentPest("rabbit");
+    setShowCard(true);
+  };
 
   return (
     <>
@@ -39,7 +39,7 @@ const Rabbit = (props) => {
         <meshPhysicalMaterial map={colorMap} />
       </mesh>
     </>
-  )
-}
+  );
+};
 
-export default Rabbit
+export default Rabbit;
