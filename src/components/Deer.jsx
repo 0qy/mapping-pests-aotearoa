@@ -7,7 +7,7 @@ import { useTexture } from '@react-three/drei'
 
 const Deer = (props) => {
   const { setCurrentPest, setShowCard } = props
-  const deerObj = useLoader(OBJLoader, '/models/newdeer.obj')
+  const deerObj = useLoader(OBJLoader, '/models/deer2.obj')
   // const [hover, setHover] = useState(false)
   // useFrame(() => {
   //   if (hover) {
@@ -15,7 +15,7 @@ const Deer = (props) => {
   //   }
   // })
 
-  // const colorMap = useTexture(['/texture/T_Deer_D.png'])
+  const colorMap = useTexture('/texture/deer.jpg')
 
   const geometry = useMemo(() => {
     let g
@@ -38,10 +38,10 @@ const Deer = (props) => {
       <mesh
         onClick={handleClick}
         geometry={geometry}
-        scale={1}
-        position={[0, 0, 0]}
+        scale={0.04}
+        position={[1, -1.35, 0]}
       >
-        {/* <meshPhysicalMaterial map={colorMap} /> */}
+        <meshPhysicalMaterial map={colorMap} />
       </mesh>
     </>
   )
