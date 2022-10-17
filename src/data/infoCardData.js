@@ -34,7 +34,9 @@ export const infoCardData = [
   {
     id: "himalayanTahr",
     name: "himalayan tahr",
-    subHeading: "",
-    description: "",
+    subHeading:
+      "Himalayan tahr can cause significant damage to native grasses and herbs in the alpine habitats where they have established in New Zealand.",
+    description:
+      "This vegetation is vulnerable because it evolved in the absence of mammalian herbivores. Tahr grazing can kill entire plants. Tahr distribution and their abundance has been correlated with decreases in snow tussock, changes in the composition of grasslands and increases in bare ground. Tahr grazing can limit the distribution and abundance of iconic plant species such as the Mount Cook buttercup. Tahr are highly gregarious (unlike other ungulates in the alpine areas of New Zealand) and can reach high densities so that, in addition to grazing damage, large groups of tahr can damage alpine vegetation by trampling. The loss of vegetation cover can result in fine-scale soil erosion.",
   },
 ];

@@ -38,9 +38,9 @@ const Tahr = (props) => {
     <>
       <mesh
         geometry={geometry}
-        scale={0.04}
-        position={[-2, -1.5, -1]}
-        rotation={[Math.PI / -2, 0, Math.PI / 1.2]}
+        scale={0.047}
+        position={[-1.3, -1.5, -0.3]}
+        rotation={[Math.PI / -2, 0, Math.PI / 1.3]}
         onClick={handleClick}
         onPointerOver={() => {
           setHover(true);
