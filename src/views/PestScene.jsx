@@ -14,7 +14,7 @@ const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
         fov: 32,
         near: 0.1,
         far: 1000,
-        position: [0, 4, 0],
+        position: [1.12, 1.73, 10.18],
       }}
     >
       <OrbitControls target={[0, 0, 0]} />
