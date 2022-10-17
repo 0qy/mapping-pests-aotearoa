@@ -22,6 +22,7 @@ const StyledCard = styled(Card)({
   zIndex: 1000,
   backgroundColor: "rgba(0,0,0,0.25)",
   color: "white",
+  overflow: "scroll",
 });
 
 const InfoCard = ({ setDrawerOpen, setShowCard, currentPest }) => {

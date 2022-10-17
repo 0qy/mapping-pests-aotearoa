@@ -31,4 +31,12 @@ export const infoCardData = [
     description:
       "Deer populations have been building over the past couple of decades across the country. This is because they have been harvesting at a lower level than their breeding rate. As numbers have increased, deer have moved into new areas to search for food. Deer damage native forests by feeding on forest plants, trees, and seedlings. They start with the native plants they prefer most such as schefflera, broadleaf, and hen and chicken fern in forest understoreys. Then they will move on to plants they like less. This can result in large groups of deer mainly eating falling leaves from canopy trees. In subalpine areas, deer can damage tall tussocks and wildflowers like alpine buttercups. By targeting these plants and altering the forest structure, deer can change their composition of plants. This takes vital food and shelter from other animals. Over time this can hinder or stop forest regeneration.",
   },
+  {
+    id: "himalayanTahr",
+    name: "himalayan tahr",
+    subHeading:
+      "Himalayan tahr can cause significant damage to native grasses and herbs in the alpine habitats where they have established in New Zealand.",
+    description:
+      "This vegetation is vulnerable because it evolved in the absence of mammalian herbivores. Tahr grazing can kill entire plants. Tahr distribution and their abundance has been correlated with decreases in snow tussock, changes in the composition of grasslands and increases in bare ground. Tahr grazing can limit the distribution and abundance of iconic plant species such as the Mount Cook buttercup. Tahr are highly gregarious (unlike other ungulates in the alpine areas of New Zealand) and can reach high densities so that, in addition to grazing damage, large groups of tahr can damage alpine vegetation by trampling. The loss of vegetation cover can result in fine-scale soil erosion.",
+  },
 ];
