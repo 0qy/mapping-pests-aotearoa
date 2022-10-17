@@ -1,21 +1,21 @@
-import React from "react";
-import { Canvas } from "@react-three/fiber";
-import { Stars, OrbitControls } from "@react-three/drei";
-import { Sky } from "@react-three/drei";
-import { PerspectiveCamera } from "three";
+import React from 'react'
+import { Canvas } from '@react-three/fiber'
+import { Stars, OrbitControls } from '@react-three/drei'
+import { Sky } from '@react-three/drei'
+import { PerspectiveCamera } from 'three'
 
+import Animals from '../components/Animals'
 import Fog from "../components/Fog";
-import Animals from "../components/Animals";
 
 const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
   const CameraHelper = () => {
-    const camera = new PerspectiveCamera(60, 1, 1, 15);
+    const camera = new PerspectiveCamera(60, 1, 1, 15)
     return (
       <group position={[0, 4, 9]}>
         <cameraHelper args={[camera]} />;
       </group>
-    );
-  };
+    )
+  }
 
   return (
     <Canvas
@@ -43,7 +43,7 @@ const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
       <Fog />
       {/* <CameraHelper /> */}
     </Canvas>
-  );
-};
+  )
+}
 
-export default PestScene;
+export default PestScene
