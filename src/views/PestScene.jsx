@@ -1,22 +1,13 @@
-import React from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Stars, OrbitControls } from '@react-three/drei'
-import { Sky } from '@react-three/drei'
-import { PerspectiveCamera } from 'three'
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 
-import Animals from '../components/Animals'
+import Animals from "../components/Animals";
 import Fog from "../components/Fog";
+import Gizmo from "../components/helpers/Gizmo";
 
 const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
-  const CameraHelper = () => {
-    const camera = new PerspectiveCamera(60, 1, 1, 15)
-    return (
-      <group position={[0, 4, 9]}>
-        <cameraHelper args={[camera]} />;
-      </group>
-    )
-  }
-
   return (
     <Canvas
       camera={{
@@ -41,9 +32,9 @@ const PestScene = ({ currentPest, setCurrentPest, setShowCard }) => {
         setShowCard={setShowCard}
       />
       <Fog />
-      {/* <CameraHelper /> */}
+      <Gizmo />
     </Canvas>
-  )
-}
+  );
+};
 
-export default PestScene
+export default PestScene;
