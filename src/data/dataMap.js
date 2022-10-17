@@ -20,7 +20,7 @@ export const dataMap = (pestName) => {
         url: "https://0qy.github.io/data/stoat",
         split: 36,
       };
-    case "possom":
+    case "possum":
       return {
         url: "https://0qy.github.io/data/possom",
         split: 16,

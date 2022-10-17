@@ -1,7 +1,7 @@
 export const infoCardData = [
   {
     id: "feralGoat",
-    name: "feral goat",
+    name: "Feral Goat",
     subHeading:
       "Feral goats can quickly destroy all vegetation within their reach, threatening native plants and damaging the forest understorey.",
     description:
@@ -9,15 +9,15 @@ export const infoCardData = [
   },
   {
     id: "stoat",
-    name: "stoat",
+    name: "Stoat",
     subHeading:
       "Stoats are the number-one killer of many of New Zealand’s endangered native species.",
     description:
       "The effect of stoat predation on the survival of many of New Zealand’s bird species cannot be underestimated. They are voracious and relentless hunters, described as having only two reasons for living – to eat and to reproduce. Stoats are known to be having a significant effect on birds species such as wrybills, the New Zealand dotterel, black-fronted terns and young kiwi. Birds that nest in holes in tree trunks such as mohua, kākā and yellow-crowned kākāriki are easy prey for stoats who can take out eggs, chicks and incubating adults in one attack. Stoats are implicated in the extinction of South Island subspecies of bush wren, laughing owl and New Zealand thrush. Even a 3 kg takahe or 2 kg kakapo can be killed by a stoat, that also has a strategy of killing everything in sight and storing the surplus for later. Stoats and rats are part of a complex predator-prey relationship associated with beech tree seed production. In a periodic ‘mast event’ of beech trees – where high levels of seed production occurs – stoat populations explode assisted by the increased food supply. Later, when the seed supplies run out, the higher numbers of predators have an even greater effect on populations of birds, weta, bats and landsnails.",
   },
   {
-    id: "possom",
-    name: "possom",
+    id: "possum",
+    name: "Possum",
     subHeading:
       "The possum is one of the greatest threats to our natural environment.",
     description:
@@ -25,7 +25,7 @@ export const infoCardData = [
   },
   {
     id: "rabbit",
-    name: "rabbit",
+    name: "Rabbit",
     subHeading:
       "After their introduction, European rabbits soon became widely distributed throughout the drier regions of both main islands and on many offshore islands. As herbivores, they are very significant agricultural and ecological pests.",
     description:
@@ -33,7 +33,7 @@ export const infoCardData = [
   },
   {
     id: "redDeer",
-    name: "red deer",
+    name: "Red Deer",
     subHeading:
       "In New Zealand, deer have no natural predators. This means they can grow to large numbers without the support of hunters and others to aid in their management.",
     description:
@@ -41,7 +41,7 @@ export const infoCardData = [
   },
   {
     id: "himalayanTahr",
-    name: "himalayan tahr",
+    name: "Himalayan Tahr",
     subHeading:
       "Himalayan tahr can cause significant damage to native grasses and herbs in the alpine habitats where they have established in New Zealand.",
     description:
