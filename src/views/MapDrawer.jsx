@@ -15,7 +15,7 @@ const FullPageContainer = styled(Box)({
 });
 
 const MapContainer = styled(Box)({
-  width: "80vw",
+  width: "72vw",
   heigth: "100vh",
 });
 
