@@ -1,24 +1,24 @@
-import { GeoJsonLayer } from "deck.gl";
+import { GeoJsonLayer } from 'deck.gl'
 
 const buildGeoJsonLayers = (count, url) => {
-  const layers = [];
+  const layers = []
   for (let i = 1; i <= count; i++) {
-    layers.push(buildLayer(url, i));
+    layers.push(buildLayer(url, i))
   }
-  return layers;
-};
+  return layers
+}
 
 const getColor = (abundance) => {
-  if (abundance === "H") {
-    return [255, 0, 4];
+  if (abundance === 'H') {
+    return [255, 0, 4]
   }
-  if (abundance === "M") {
-    return [255, 132, 0];
+  if (abundance === 'M') {
+    return [255, 132, 0]
   }
-  if (abundance === "L") {
-    return [122, 255, 0];
+  if (abundance === 'L') {
+    return [122, 255, 0]
   }
-};
+}
 
 const buildLayer = (url, index) => {
   return new GeoJsonLayer({
@@ -30,21 +30,21 @@ const buildLayer = (url, index) => {
     extruded: true,
     wireframe: true,
     getElevation: (f) => {
-      if (f.properties["Abundance"] === "H") {
-        return 10;
+      if (f.properties['Abundance'] === 'H') {
+        return 10
       }
 
-      if (f.properties["Abundance"] === "M") {
-        return 5;
+      if (f.properties['Abundance'] === 'M') {
+        return 5
       }
-      if (f.properties["Abundance"] === "L") {
-        return 0;
+      if (f.properties['Abundance'] === 'L') {
+        return 0
       }
     },
-    getFillColor: (f) => getColor(f.properties["Abundance"]),
-    getLineColor: (f) => getColor(f.properties["Abundance"]),
+    getFillColor: (f) => getColor(f.properties['Abundance']),
+    getLineColor: (f) => getColor(f.properties['Abundance']),
     pickable: true,
-  });
-};
+  })
+}
 
-export default buildGeoJsonLayers;
+export default buildGeoJsonLayers
