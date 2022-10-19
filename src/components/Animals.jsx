@@ -1,11 +1,11 @@
 import React from "react";
 
 import Island from "./Island";
-import Stoat from "../components/Stoat";
-import Goat from "../components/Goat";
-import Deer from "../components/Deer";
-import Rabbit from "../components/Rabbit";
-import Tahr from "../components/Tahr";
+import Stoat from "./pests/Stoat";
+import Goat from "./pests/Goat";
+import Deer from "./pests/Deer";
+import Rabbit from "./pests/Rabbit";
+import Tahr from "./pests/Tahr";
 
 const Animals = ({ currentPest, setCurrentPest, setShowCard }) => {
   return (

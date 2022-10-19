@@ -36,7 +36,7 @@ function Map({ currentPest }) {
     timestamp: Date.UTC(2019, 7, 1, 22),
     color: [255, 255, 255],
     intensity: 1.0,
-    _shadow: true,
+    _shadow: false,
   });
 
   const [effects] = useState(() => {
@@ -44,15 +44,6 @@ function Map({ currentPest }) {
     lightingEffect.shadowColor = [0, 0, 0, 0.5];
     return [lightingEffect];
   });
-
-  const onClick = (info) => {
-    if (info.object) {
-      // eslint-disable-next-line
-      alert(
-        `${info.object.properties.name} (${info.object.properties.abbrev})`
-      );
-    }
-  };
 
   const data = dataMap(currentPest);
 

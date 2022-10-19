@@ -5,13 +5,8 @@ import { useTexture } from "@react-three/drei";
 
 const Deer = (props) => {
   const { setCurrentPest, setShowCard } = props;
-  const deerObj = useLoader(OBJLoader, "/models/deer2.obj");
-  // const [hover, setHover] = useState(false)
-  // useFrame(() => {
-  //   if (hover) {
-  //     deerObj.rotation.y += 0.02
-  //   }
-  // })
+  const deerObj = useLoader(OBJLoader, "/models/deer.obj");
+
 
   const colorMap = useTexture("/texture/deer.jpg");
 
