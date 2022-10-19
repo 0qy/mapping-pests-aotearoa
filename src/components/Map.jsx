@@ -45,15 +45,6 @@ function Map({ currentPest }) {
     return [lightingEffect];
   });
 
-  const onClick = (info) => {
-    if (info.object) {
-      // eslint-disable-next-line
-      alert(
-        `${info.object.properties.name} (${info.object.properties.abbrev})`
-      );
-    }
-  };
-
   const data = dataMap(currentPest);
 
   return (
